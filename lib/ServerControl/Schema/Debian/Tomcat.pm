@@ -32,13 +32,13 @@ __PACKAGE__->register(
       'jasper-el.jar'               => '/usr/share/java/jasper-el.jar',
       'jasper-jdt.jar'              => '/usr/share/tomcat6/lib/jasper-jdt.jar',
       'jasper.jar'                  => '/usr/share/java/jasper.jar',
-      'jsp-api.jar'                 => '/usr/share/tomcat6/jsp-api.jar',
-      'servlet-api.jar'             => '/usr/share/tomcat6/servlet-api.jar',
-      'tomcat-coyote.jar'           => '/usr/share/tomcat6/tomcat-coyote.jar',
-      'tomcat-dbcp.jar'             => '/usr/share/tomcat6/commons-dbcp.jar',
-      'tomcat-i18n-es.jar'          => '/usr/share/tomcat6/tomcat-i18n-es.jar',
-      'tomcat-i18n-fr.jar'          => '/usr/share/tomcat6/tomcat-i18n-fr.jar',
-      'tomcat-i18n-ja.jar'          => '/usr/share/tomcat6/tomcat-i18n-ja.jar',
+      'jsp-api.jar'                 => '/usr/share/tomcat6/lib/jsp-api.jar',
+      'servlet-api.jar'             => '/usr/share/tomcat6/lib/servlet-api.jar',
+      'tomcat-coyote.jar'           => '/usr/share/tomcat6/lib/tomcat-coyote.jar',
+      'tomcat-dbcp.jar'             => '/usr/share/tomcat6/lib/commons-dbcp.jar',
+      'tomcat-i18n-es.jar'          => '/usr/share/tomcat6/lib/tomcat-i18n-es.jar',
+      'tomcat-i18n-fr.jar'          => '/usr/share/tomcat6/lib/tomcat-i18n-fr.jar',
+      'tomcat-i18n-ja.jar'          => '/usr/share/tomcat6/lib/tomcat-i18n-ja.jar',
 
 );
 
