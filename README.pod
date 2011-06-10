@@ -1,0 +1,13 @@
+=pod
+
+This is the Tomcat Module for ServerControl.
+
+=head2 Dependencies
+
+=over 4
+
+=item *
+
+ServerControl >= 0.93
+
+=back

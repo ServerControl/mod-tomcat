@@ -1,0 +1,126 @@
+Directories:
+   Base:
+      bin:
+         name: bin
+         chmod: 755
+         user: root
+         group: root
+      webapps:
+         name: data/webapps
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+      commonlib:
+         name: data/lib/common
+         chmod: 755
+         user: root
+         group: root
+      serverlib:
+         name: data/lib/server
+         chmod: 755
+         user: root
+         group: root
+      sharedlib:
+         name: data/lib/shared
+         chmod: 755
+         user: root
+         group: root
+      work:
+         name: data/lib/work
+         chmod: 777
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+
+   Configuration:
+      conf:
+         name: conf
+         chmod: 755
+         user: root
+         group: root
+   Runtime:
+      pid:
+         name: run
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+      log:
+         name: logs
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+
+Files:
+   Exec:
+      jsvc:
+         name: bin/jsvc-<%= __PACKAGE__->get_name %>
+         link: <%= ServerControl::Schema->get('jsvc') %>
+      bootstrap:
+         name: bin/bootstrap.jar
+         link: <%= ServerControl::Schema->get('bootstrap.jar') %>
+      catalinatasks:
+         name: bin/catalina-tasks.xml
+         link: <%= ServerControl::Schema->get('catalina-tasks.xml') %>
+      commonsdaemon:
+         name: bin/commons-daemon.jar
+         link: <%= ServerControl::Schema->get('commons-daemon.jar') %>
+      tomcatjuli:
+         name: bin/tomcat-juli.jar
+         link: <%= ServerControl::Schema->get('tomcat-juli.jar') %>
+      toolwrappersh:
+         name: bin/tool-wrapper.sh
+         link: <%= ServerControl::Schema->get('tool-wrapper.sh') %>
+   Base:
+      annotationsapi:
+         name: data/lib/common/annotations-api.jar
+         link: <%= ServerControl::Schema->get('annotations-api.jar') %>
+      catalinaant:
+         name: data/lib/common/catalina-ant.jar
+         link: <%= ServerControl::Schema->get('catalina-ant.jar') %>
+      catalinaha:
+         name: data/lib/common/catalina-ha.jar
+         link: <%= ServerControl::Schema->get('catalina-ha.jar') %>
+      catalina:
+         name: data/lib/common/catalina.jar
+         link: <%= ServerControl::Schema->get('catalina.jar') %>
+      catalinatribes:
+         name: data/lib/common/catalina-tribes.jar
+         link: <%= ServerControl::Schema->get('catalina-tribes.jar') %>
+      elapi:
+         name: data/lib/common/el-api.jar
+         link: <%= ServerControl::Schema->get('el-api.jar') %>
+      jasperel:
+         name: data/lib/common/jasper-el.jar
+         link: <%= ServerControl::Schema->get('jasper-el.jar') %>
+      jasperjdt:
+         name: data/lib/common/jasper-jdt.jar
+         link: <%= ServerControl::Schema->get('jasper-jdt.jar') %>
+      jasper:
+         name: data/lib/common/jasper.jar
+         link: <%= ServerControl::Schema->get('jasper.jar') %>
+      jspapi:
+         name: data/lib/common/jsp-api.jar
+         link: <%= ServerControl::Schema->get('jsp-api.jar') %>
+      servletapi:
+         name: data/lib/common/servlet-api.jar
+         link: <%= ServerControl::Schema->get('servlet-api.jar') %>
+      tomcatcoyote:
+         name: data/lib/common/tomcat-coyote.jar
+         link: <%= ServerControl::Schema->get('tomcat-coyote.jar') %>
+      tomcatdbcp:
+         name: data/lib/common/tomcat-dbcp.jar
+         link: <%= ServerControl::Schema->get('tomcat-dbcp.jar') %>
+      tomcati18nes:
+         name: data/lib/common/tomcat-i18n-es.jar
+         link: <%= ServerControl::Schema->get('tomcat-i18n-es.jar') %>
+      tomcati18nja:
+         name: data/lib/common/tomcat-i18n-ja.jar
+         link: <%= ServerControl::Schema->get('tomcat-i18n-ja.jar') %>
+      tomcati18nfr:
+         name: data/lib/common/tomcat-i18n-fr.jar
+         link: <%= ServerControl::Schema->get('tomcat-i18n-fr.jar') %>
+
+   Configuration:
+      conf:
+         name: conf
+         call: <% sub { ServerControl::Template->parse(@_); } %>
+
