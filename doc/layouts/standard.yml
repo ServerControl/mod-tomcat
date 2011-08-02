@@ -54,6 +54,9 @@ Files:
       jsvc:
          name: bin/jsvc-<%= __PACKAGE__->get_name %>
          link: <%= ServerControl::Schema->get('jsvc') %>
+      javaopts:
+         name: conf/java.opts
+         call: <% sub { } %>
       bootstrap:
          name: bin/bootstrap.jar
          link: <%= ServerControl::Schema->get('bootstrap.jar') %>
