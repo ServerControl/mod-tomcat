@@ -9,7 +9,7 @@ package ServerControl::Module::Tomcat;
 use strict;
 use warnings;
 
-our $VERSION = '0.93';
+our $VERSION = '0.94';
 
 use ServerControl::Module;
 use ServerControl::Commons::Process;
@@ -53,7 +53,15 @@ sub start {
    my $java_home   = $args->{"java-home"};
    my $user        = $args->{"user"};
 
-   spawn("JAVA_HOME=$java_home $path/$exec_file -cp $path/$bin_dir/tomcat-juli.jar:$path/$bin_dir/bootstrap.jar:$path/$bin_dir/commons-daemon.jar -Dcatalina.home=$path -Dcatalina.base=$path -user $user -outfile $path/$log_dir/catalina.out -errfile $path/$log_dir/catalina.err -pidfile $path/$run_dir/$name.pid org.apache.catalina.startup.Bootstrap");
+
+   my $java_opts_file   = ServerControl::FsLayout->get_file("Exec", "javaopts");
+
+   my $java_opts = "";
+   if($java_opts_file && -f "$path/$java_opts_file") {
+      $java_opts = eval { local(@ARGV, $/) = ("$path/$java_opts_file"); <>; };
+   }
+
+   spawn("JAVA_HOME=$java_home $path/$exec_file -cp $path/$bin_dir/tomcat-juli.jar:$path/$bin_dir/bootstrap.jar:$path/$bin_dir/commons-daemon.jar -Dcatalina.home=$path -Dcatalina.base=$path -user $user -outfile $path/$log_dir/catalina.out -errfile $path/$log_dir/catalina.err -pidfile $path/$run_dir/$name.pid $java_opts org.apache.catalina.startup.Bootstrap");
 
 }
 
