@@ -1,3 +1,8 @@
+servercontrol-mod-tomcat (0.199.0) unstable; urgency=low
+  * feature freeze
+
+ -- Jan Gehring <jan.gehring@gmail.com>  Sat, 21 Jul 2012 12:30:00 +0200
+
 servercontrol-mod-tomcat (0.95) unstable; urgency=low
   * chomp your way throu live
 

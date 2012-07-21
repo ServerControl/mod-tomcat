@@ -9,7 +9,7 @@ package ServerControl::Module::Tomcat;
 use strict;
 use warnings;
 
-our $VERSION = '0.95';
+our $VERSION = '0.199.0';
 
 use ServerControl::Module;
 use ServerControl::Commons::Process;
