@@ -4,7 +4,7 @@
 # vim: set ts=3 sw=3 tw=0:
 # vim: set expandtab:
 
-package ServerControl::Schema::Fedora::Tomcat;
+package ServerControl::Schema::CentOS::Tomcat;
 
 use strict;
 use warnings;
